@@ -1,0 +1,6 @@
+{{poll.question}}
+<br/>
+{% for choice in poll.choice_set.all %}
+    {{choice.choice_text}}   {{choice.votes}} votes
+    <br/>
+{% endfor %}

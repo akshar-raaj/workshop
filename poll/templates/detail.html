@@ -1,0 +1,9 @@
+<p>{{poll.question}}</p>
+Choices
+<form method="post" action="{% url 'vote_on_poll' poll.id %}">
+    {% csrf_token %}
+{% for choice in poll.choice_set.all %}
+    <input type="radio" name="ch" value="{{choice.id}}"> {{choice.choice_text}}</input> <br/>
+{% endfor %}
+<input type="submit" value="SUBMIT"/>
+</form>
